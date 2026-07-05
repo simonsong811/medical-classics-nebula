@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>医学古籍诗云 - 3D 粒子星云</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  </head>
+  <body>
+    <div id="ambient-layer" aria-hidden="true">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="stars" id="ambient-stars"></div>
+    </div>
+
+    <div id="canvas-container" aria-label="医学古籍 3D 粒子诗云"></div>
+
+    <div id="ui-overlay">
+      <div class="hero-tag">MEDICAL CLASSICS NEBULA</div>
+      <h1 class="site-title">医学古籍诗云</h1>
+      <p class="site-subtitle">以古籍为太阳，以主题为亮星，以万条语料为星尘</p>
+      <div class="hero-stats" aria-label="星云统计">
+        <div class="hero-stat">
+          <span class="hero-stat-num" id="stat-sources">--</span>
+          <span class="hero-stat-label">部古籍</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num" id="stat-passages">--</span>
+          <span class="hero-stat-label">段语料</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num" id="stat-themes">--</span>
+          <span class="hero-stat-label">个富集主题</span>
+        </div>
+      </div>
+    </div>
+
+    <aside id="source-panel" aria-label="典籍星域">
+      <div class="panel-kicker">CLASSIC CLUSTERS</div>
+      <h2>典籍星域</h2>
+      <div id="source-list"></div>
+    </aside>
+
+    <div id="bottom-note">拖拽旋转星云 · 点击太阳、亮星或星尘阅读古籍段落</div>
+
+    <div id="poem-modal" class="hidden">
+      <div class="modal-content">
+        <button id="close-btn" type="button" aria-label="关闭">×</button>
+        <div id="poem-detail">
+          <h2 id="poem-title"></h2>
+          <h3 id="poem-author"></h3>
+          <div id="poem-body"></div>
+          <div class="modal-actions">
+            <button id="back-btn" type="button">返回星云</button>
+            <button id="poem-expand-btn" type="button">展开详细内容</button>
+          </div>
+          <div id="poem-extra" class="hidden"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="poems.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
